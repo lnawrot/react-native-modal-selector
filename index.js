@@ -77,6 +77,7 @@ const propTypes = {
     enableShortPress:               PropTypes.bool,
     enableLongPress:                PropTypes.bool,
     optionsTestIDPrefix:            PropTypes.string,
+    statusBarTranslucent: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -130,6 +131,7 @@ const defaultProps = {
     enableShortPress:               true,
     enableLongPress:                false,
     optionsTestIDPrefix:            'default',
+    statusBarTranslucent: false,
 };
 
 export default class ModalSelector extends React.Component {
@@ -343,6 +345,7 @@ export default class ModalSelector extends React.Component {
                 visible={this.state.modalVisible}
                 onRequestClose={this.close}
                 animationType={this.props.animationType}
+                statusBarTranslucent={this.props.statusBarTranslucent}
                 onDismiss={() => this.state.changedItem && this.props.onChange(this.state.changedItem)}
             >
                 {this.renderOptionList()}
